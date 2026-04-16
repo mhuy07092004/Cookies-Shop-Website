@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import CookiesImg from '../assets/Cookies.png';
+import AuthModal from './AuthModal';
 
 const Navbar = () => {
+  const [showAuthModal, setShowAuthModal] = useState(false);
+
   return (
     <>
       <nav className="navbar">
@@ -29,6 +33,14 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
+              to="/menu"
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              Our Menu
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/shipping"
               className={({ isActive }) => (isActive ? 'active' : '')}
             >
@@ -36,12 +48,16 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <a href="#" className="navbar-login-btn" onClick={(e) => e.preventDefault()}>
+            <a href="#" className="navbar-login-btn" onClick={(e) => {
+              e.preventDefault();
+              setShowAuthModal(true);
+            }}>
               Login
             </a>
           </li>
         </ul>
       </nav>
+      {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} />}
     </>
   );
 };

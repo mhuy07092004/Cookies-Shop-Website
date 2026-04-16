@@ -516,3 +516,205 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ===== CARD ===== */
+.card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+.card .card-image {
+    display: block;
+    margin: 0 auto 1.25rem;    
+    width: 65%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+.card .card-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-brown-deeper);
+    margin-bottom: 0.5rem;
+}
+.card .card-price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 1.25rem;
+}
+.card .card-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: background-color var(--transition), transform 0.1s;
+}
+.card .card-button:hover {
+    background-color: var(--color-primary-dark);
+}
+.card .card-button:active {
+    transform: scale(0.98);
+}
+
+/* ===== AUTH MODAL ===== */
+.auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(2px);
+}
+
+.auth-modal {
+  background-color: var(--color-bg);
+  width: 90%;
+  max-width: 400px;
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  text-align: left;
+  border: 1px solid var(--color-border);
+}
+
+.auth-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.auth-close-btn:hover {
+  color: var(--color-brown-deeper);
+}
+
+.auth-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--color-brown-deeper);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-group input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background-color: var(--color-white);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(200, 149, 108, 0.2);
+}
+
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.form-group-checkbox label {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.auth-submit-btn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  transition: background-color var(--transition), transform 0.1s;
+}
+
+.auth-submit-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.auth-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.auth-switch-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: 1rem;
+}
+
+.auth-switch-text span {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--transition), color var(--transition);
+}
+
+.auth-switch-text span:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
